@@ -1,6 +1,7 @@
 const { createApp, ref } = Vue;
 
-const HEADER = "7e8bb5a89f2842ac4af01b3b7e228592";
+const PC_HASH = "7e8bb5a89f2842ac4af01b3b7e228592";
+const MOBILE_HASH = "7a990d405d2c6fb93aa8fbb0ec1a3b23";
 const SALT = "af0ik392jrmt0nsfdghy0";
 const SPLITTER = "Fe12NAfA3R6z4k0z";
 
@@ -51,6 +52,7 @@ createApp({
         const currentTab = ref('general');
         const saveData = ref(null);
         const inputSaveData = ref('');
+        const saveFormat = ref('pc'); // 'pc' or 'mobile'
 
         const toasts = ref([]);
 
@@ -66,7 +68,6 @@ createApp({
             toasts.value = toasts.value.filter(t => t.id !== id);
         };
 
-        // STATIC_DATAが読み込まれていない場合のフォールバック
         const staticItemBonuses = (typeof STATIC_DATA !== 'undefined' && STATIC_DATA.itemBonuses) ? STATIC_DATA.itemBonuses : {};
 
         const getStaticName = (category, id) => {
@@ -79,10 +80,8 @@ createApp({
         const imgError = (e) => {
             const src = e.target.src;
             if (src.includes('.webp')) {
-                // Fallback to png if webp fails
                 e.target.src = src.replace('.webp', '.png');
             } else {
-                // Simply hide the broken image so it doesn't break layout or look ugly
                 e.target.style.display = 'none';
             }
         };
@@ -90,30 +89,35 @@ createApp({
         const processInputData = () => {
             if (!inputSaveData.value) return;
             const cleanInput = inputSaveData.value.trim();
+            let detectedFormat = 'pc';
 
             try {
                 let json = null;
 
-                if (cleanInput.startsWith(HEADER)) {
+                if (cleanInput.startsWith(PC_HASH)) {
+                    // PC Format: Hash + Base64(RawDeflate)
                     try {
-                        const body = cleanInput.slice(HEADER.length);
+                        const body = cleanInput.slice(PC_HASH.length);
                         const binaryString = atob(body);
-                        const bytes = new Uint8Array(binaryString.length);
-                        for (let i = 0; i < binaryString.length; i++) bytes[i] = binaryString.charCodeAt(i);
-
+                        const bytes = Uint8Array.from(binaryString, c => c.charCodeAt(0));
                         const decompressed = pako.inflate(bytes, { to: 'string', raw: true });
                         json = JSON.parse(decompressed);
+                        detectedFormat = 'pc';
                     } catch (e) {
-                        try {
-                            const body = cleanInput.slice(HEADER.length);
-                            const binaryString = atob(body);
-                            const bytes = new Uint8Array(binaryString.length);
-                            for (let i = 0; i < binaryString.length; i++) bytes[i] = binaryString.charCodeAt(i);
-                            const decompressed = pako.inflate(bytes, { to: 'string' });
-                            json = JSON.parse(decompressed);
-                        } catch (e2) {
-                            throw new Error("解凍失敗: " + e.message);
-                        }
+                        console.error(e);
+                    }
+                }
+                else if (cleanInput.startsWith(MOBILE_HASH)) {
+                    // Mobile Format: Hash + Base64(Zlib)
+                    try {
+                        const body = cleanInput.slice(MOBILE_HASH.length);
+                        const binaryString = atob(body);
+                        const bytes = Uint8Array.from(binaryString, c => c.charCodeAt(0));
+                        const decompressed = pako.inflate(bytes, { to: 'string' }); // standard zlib
+                        json = JSON.parse(decompressed);
+                        detectedFormat = 'mobile';
+                    } catch (e) {
+                        throw new Error("Mobile形式の解凍に失敗: " + e.message);
                     }
                 }
                 else if (cleanInput.includes(SPLITTER)) {
@@ -128,8 +132,9 @@ createApp({
 
                 if (json) {
                     saveData.value = json;
+                    saveFormat.value = detectedFormat;
                     currentTab.value = 'general';
-                    showToast('セーブデータを読み込みました', 'success');
+                    showToast(`読み込み成功 (${detectedFormat.toUpperCase()}形式)`, 'success');
                 } else {
                     showToast('形式不明のデータです', 'error');
                 }
@@ -144,7 +149,7 @@ createApp({
             newSave.creationTimestamp = Date.now();
             newSave.uniqueId = "chse_" + Date.now();
             saveData.value = newSave;
-            showToast("新規データを作成しました。編集後に保存してください。", 'success');
+            showToast("新規データを作成しました。", 'success');
         };
 
         const unsprinkle = (data) => {
@@ -155,14 +160,41 @@ createApp({
 
         const encode = () => {
             try {
-                const jsonStr = JSON.stringify(saveData.value);
-                const binary = pako.deflate(jsonStr, { raw: true, level: 9 });
-                let binaryString = '';
-                const len = binary.length;
-                for (let i = 0; i < len; i++) {
-                    binaryString += String.fromCharCode(binary[i]);
+                // ディープコピーして編集（画面表示に影響を与えないため）
+                const dataToSave = JSON.parse(JSON.stringify(saveData.value));
+                let resultHash = "";
+                let compressed = null;
+
+                if (saveFormat.value === 'mobile') {
+                    // === Mobile変換 ===
+                    dataToSave.saveOrigin = "mobile";
+                    // バージョン番号の調整 (例: 2.7.0 -> 1.0e12)
+                    let ver = dataToSave.readPatchNumber || "1.0e12";
+                    if (!ver.includes("1.0e12")) {
+                         // 末尾のビルド番号などがあれば維持
+                         const suffix = ver.includes('.') ? ver.split('.').pop() : "";
+                         dataToSave.readPatchNumber = "1.0e12-" + (suffix.length > 0 ? suffix : "0");
+                    }
+                    
+                    const jsonStr = JSON.stringify(dataToSave);
+                    compressed = pako.deflate(jsonStr); // standard zlib
+                    resultHash = MOBILE_HASH;
+                } else {
+                    // === PC変換 ===
+                    dataToSave.saveOrigin = "pc";
+                    // バージョン番号の調整 (例: 1.0e12 -> 2.7.0)
+                    let ver = dataToSave.readPatchNumber || "2.7.0";
+                    if (ver.includes("1.0e12")) {
+                        dataToSave.readPatchNumber = "2.7.0";
+                    }
+
+                    const jsonStr = JSON.stringify(dataToSave);
+                    compressed = pako.deflate(jsonStr, { raw: true, level: 9 }); // raw deflate
+                    resultHash = PC_HASH;
                 }
-                return HEADER + btoa(binaryString);
+
+                const binaryString = String.fromCharCode(...compressed);
+                return resultHash + btoa(binaryString);
             } catch (e) {
                 console.error(e);
                 showToast("保存エラー: " + e.message, 'error');
@@ -190,13 +222,14 @@ createApp({
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = 'clicker_heroes_save.txt';
+                a.download = `clicker_heroes_save_${saveFormat.value}.txt`;
                 a.click();
                 URL.revokeObjectURL(url);
-                showToast('セーブファイルをダウンロードしました', 'success');
+                showToast(`セーブファイルをダウンロードしました (${saveFormat.value.toUpperCase()})`, 'success');
             }
         };
 
+        // --- Helper Functions ---
         const parseBigNum = (bn) => {
             if (!bn) return "0";
             if (typeof bn === 'string') return bn;
@@ -221,9 +254,7 @@ createApp({
                     while (Math.abs(base) < 1 && base !== 0) { base *= 10; power--; }
                 }
             }
-
             if (isNaN(base) || isNaN(power)) return;
-
             const newVal = { numBase: base, numPower: power };
 
             if (target === 'gold') saveData.value.gold = newVal;
@@ -296,7 +327,6 @@ createApp({
 
         const buyAllUpgrades = (heroId) => {
             if (!saveData.value.upgrades) saveData.value.upgrades = {};
-            // STATIC_DATAからヒーローのアップグレードを取得
             const heroData = STATIC_DATA.heroes[heroId];
             if (heroData && heroData.upgrades) {
                 heroData.upgrades.forEach(u => {
@@ -304,6 +334,19 @@ createApp({
                 });
             }
             showToast('アップグレードを全て購入済みにしました', 'success');
+        };
+
+        const buyAllUpgradesGlobal = () => {
+            if (!saveData.value.upgrades) saveData.value.upgrades = {};
+            for (const heroId in STATIC_DATA.heroes) {
+                const heroData = STATIC_DATA.heroes[heroId];
+                if (heroData.upgrades) {
+                    heroData.upgrades.forEach(u => {
+                        saveData.value.upgrades[u.id] = true;
+                    });
+                }
+            }
+            showToast('全ヒーローのアップグレードを解放しました', 'success');
         };
 
         const hasUpgrade = (upgradeId) => {
@@ -324,6 +367,7 @@ createApp({
             currentTab,
             saveData,
             inputSaveData,
+            saveFormat,
             processInputData,
             createNewSave,
             importFile,
@@ -335,6 +379,7 @@ createApp({
             updateAncientLevel,
             toggleUpgrade,
             buyAllUpgrades,
+            buyAllUpgradesGlobal,
             hasUpgrade,
             removeCheatFlag,
             unlockAllSkins,
@@ -346,19 +391,7 @@ createApp({
             imgError,
             staticItemBonuses,
             toasts,
-            removeToast,
-            buyAllUpgradesGlobal: () => {
-                if (!saveData.value.upgrades) saveData.value.upgrades = {};
-                for (const heroId in STATIC_DATA.heroes) {
-                    const heroData = STATIC_DATA.heroes[heroId];
-                    if (heroData.upgrades) {
-                        heroData.upgrades.forEach(u => {
-                            saveData.value.upgrades[u.id] = true;
-                        });
-                    }
-                }
-                showToast('全ヒーローのアップグレードを解放しました', 'success');
-            }
+            removeToast
         };
     }
 }).mount('#app');
