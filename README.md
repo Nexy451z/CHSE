@@ -21,7 +21,7 @@
 4. **[ SAVE DATA ]** をクリックして、編集済みデータをダウンロード
 5. ゲーム本体にインポートして完了
 
-## ⚠️ 免責事項 (Disclaimer)
+##  免責事項 (Disclaimer)
 このツールは非公式のファンメイドツールです。
 開発元の Playsaurus とは一切関係ありません。
 このツールを使用したことによる「セーブデータの破損」「アカウントのBAN」「その他の不利益」について、製作者は一切の責任を負いません。
@@ -32,5 +32,6 @@
 - **Framework**: Vue.js 3
 - **Styling**: Vanilla CSS (CSS Variables)
 - **Compression**: pako.js
+
 
 
