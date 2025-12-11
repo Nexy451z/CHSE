@@ -1,0 +1,76 @@
+[
+	{
+        "name": "Treasures",
+        "mobileName": "Treasures",
+		"internalName": "goldpack1",
+        "id": 1,
+        "description": "Gain %1% gold instantly. Based on DPS.",
+        "cost": 25,
+		"mobileDisplayOrder": -1,
+		"_live": 0
+    },
+	{
+		"name": "3 Gilded Heroes",
+		"mobileName": "3 Gilded Heroes",
+		"internalName": "heropack1",
+		"id": 2,
+		"description": "Get 3 random gilded heroes.",
+		"cost": 200,
+		"mobileDisplayOrder": 4
+	},
+    {
+        "name": "Refresher",
+        "mobileName": "Refresher",
+		"internalName": "",
+        "id": 3,
+        "description": "Refreshes all ability cooldowns except for Dark Ritual.",
+        "cost": 20,
+		"mobileDisplayOrder": -1,
+		"_live": 0
+    },
+	{
+		"name": "Quick Ascension",
+		"mobileName": "Quick Ascension",
+		"internalName": "soulpack1",
+		"id": 4,
+		"description": "Gain %1% hero souls instantly.",
+		"cost": 500,
+		"mobileDisplayOrder": 5
+	},
+	{
+		"name": "3 Relics",
+		"mobileName": "3 Relics",
+		"internalName": "3relics",
+		"id": 5,
+		"description": "Get 3 random relics.",
+		"cost": 400,
+		"mobileDisplayOrder": 6
+	},
+	{
+		"name": "2x Damage Multiplier",
+		"mobileName": "2x Damage Multiplier",
+		"internalName": "2xdamage",
+		"id": 6,
+		"description": "Double all of your DPS forever!",
+		"cost": 500,
+		"mobileDisplayOrder": 1
+	},
+	{
+		"name": "+1 Auto Clicker",
+		"mobileName": "+1 Auto Tapper",
+		"internalName": "1autoclicker",
+		"id": 7,
+		"description": "(+10 Clicks/sec)",
+		"cost": 1000,
+		"mobileDisplayOrder": 2
+	},
+	{
+		"name": "Timelapse",
+		"mobileName": "Timelapse",
+		"internalName": "timelapse",
+		"id": 8,
+		"description": "Instantly get 8, 24, or 48 hours of offline progress.",
+		"cost": 200,
+		"mobileDisplayOrder": 3
+	}
+]

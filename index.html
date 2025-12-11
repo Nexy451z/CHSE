@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHSE - クリッカーヒーローズ・セーブエディタ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <!-- static_data.js は app.js より先に読み込む必要があります -->
+    <script src="js/static_data.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <div class="logo">&gt; CHSE_SYSTEM <span class="subtitle">// Complete Save Editor</span></div>
+            <div class="io-controls">
+                <input type="file" @change="importFile" id="fileInput" hidden>
+                <button @click="triggerFileInput" class="btn">[ LOAD FILE ]</button>
+                <button @click="exportSave" class="btn btn-primary" :disabled="!saveData">[ SAVE DATA ]</button>
+            </div>
+        </header>
+
+        <div class="editor-container" v-if="saveData">
+            <nav class="tabs">
+                <button :class="{ active: currentTab === 'general' }" @click="currentTab = 'general'">基本・資源</button>
+                <button :class="{ active: currentTab === 'heroes' }" @click="currentTab = 'heroes'">ヒーロー</button>
+                <button :class="{ active: currentTab === 'ancients' }" @click="currentTab = 'ancients'">古の神々</button>
+                <button :class="{ active: currentTab === 'outsiders' }" @click="currentTab = 'outsiders'">超越神</button>
+                <button :class="{ active: currentTab === 'mercs' }" @click="currentTab = 'mercs'">傭兵団</button>
+                <button :class="{ active: currentTab === 'items' }" @click="currentTab = 'items'">装備・遺物</button>
+                <button :class="{ active: currentTab === 'consumables' }"
+                    @click="currentTab = 'consumables'">特殊アイテム</button>
+                <button :class="{ active: currentTab === 'clan' }" @click="currentTab = 'clan'">クラン・レイド</button>
+            </nav>
+
+            <main class="content-area">
+
+                <section v-if="currentTab === 'general'">
+                    <div class="panel">
+                        <h3>基本ステータス</h3>
+                        <div class="form-group">
+                            <label>不正フラグ解除</label>
+                            <button @click="removeCheatFlag" class="btn btn-success">チーター判定を完全消去</button>
+                        </div>
+                        <div class="form-group icon-input-group">
+                            <label>
+                                <img src="assets/currencies/gold.webp" class="currency-icon" @error="imgError"
+                                    alt="Gold">
+                                ゴールド (例: 1.0e100)
+                            </label>
+                            <input type="text" :value="parseBigNum(saveData.gold)"
+                                @change="updateBigNum('gold', $event)">
+                        </div>
+                        <div class="form-group icon-input-group">
+                            <label>
+                                <img src="assets/currencies/rubies.webp" class="currency-icon" @error="imgError"
+                                    alt="Rubies">
+                                ルビー
+                            </label>
+                            <input type="number" v-model.number="saveData.rubies">
+                        </div>
+                        <div class="form-group icon-input-group">
+                            <label>
+                                <img src="assets/currencies/heroSouls.webp" class="currency-icon" @error="imgError"
+                                    alt="HS">
+                                ヒーローソウル (HS)
+                            </label>
+                            <input type="text" :value="parseBigNum(saveData.heroSouls)"
+                                @change="updateBigNum('heroSouls', $event)">
+                        </div>
+                        <div class="form-group icon-input-group">
+                            <label>
+                                <img src="assets/currencies/ancientSouls.webp" class="currency-icon" @error="imgError"
+                                    alt="AS">
+                                エンシェントソウル (AS)
+                            </label>
+                            <input type="number" v-model.number="saveData.ancientSouls">
+                        </div>
+                        <div class="form-group">
+                            <label>最高到達ゾーン (HZE)</label>
+                            <input type="number" v-model.number="saveData.highestFinishedZone">
+                        </div>
+                        <div class="form-group">
+                            <label>超越後 最高到達ゾーン</label>
+                            <input type="number" v-model.number="saveData.transcendentHighestFinishedZone">
+                        </div>
+                        <div class="form-group">
+                            <label>合計課金額 (特典解放用)</label>
+                            <input type="number" v-model.number="saveData.totalMoneySpent">
+                        </div>
+                        <div class="form-group">
+                            <label>メールアドレス</label>
+                            <input type="text" v-model="saveData.email">
+                        </div>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'consumables'">
+                    <div class="panel">
+                        <h3>消耗品・イベントアイテム</h3>
+                        <div class="grid-consumables">
+                            <!-- Items with images -->
+                            <div class="consumable-item">
+                                <img src="assets/consumables/candyCanes.webp" class="consumable-icon" @error="imgError">
+                                <div class="form-group">
+                                    <label>キャンディケイン</label>
+                                    <input type="number" v-model.number="saveData.candyCanes">
+                                </div>
+                            </div>
+                            <div class="consumable-item">
+                                <img src="assets/consumables/spikedNog.webp" class="consumable-icon" @error="imgError">
+                                <div class="form-group">
+                                    <label>スパイクノグ</label>
+                                    <input type="number" v-model.number="saveData.spikedNog">
+                                </div>
+                            </div>
+                            <div class="consumable-item">
+                                <img src="assets/consumables/labelMakers.webp" class="consumable-icon"
+                                    @error="imgError">
+                                <div class="form-group">
+                                    <label>ラベルメーカー</label>
+                                    <input type="number" v-model.number="saveData.labelMakers">
+                                </div>
+                            </div>
+                            <div class="consumable-item">
+                                <img src="assets/consumables/forgeCoals.webp" class="consumable-icon" @error="imgError">
+                                <div class="form-group">
+                                    <label>フォージコール</label>
+                                    <input type="number" v-model.number="saveData.forgeCoals">
+                                </div>
+                            </div>
+                            <div class="consumable-item">
+                                <img src="assets/consumables/autoclickers.webp" class="consumable-icon"
+                                    @error="imgError">
+                                <div class="form-group">
+                                    <label>オートクリッカー</label>
+                                    <input type="number" v-model.number="saveData.autoclickers">
+                                </div>
+                            </div>
+                            <div class="consumable-item">
+                                <img src="assets/consumables/dlcAutoclickers.webp" class="consumable-icon"
+                                    @error="imgError">
+                                <div class="form-group">
+                                    <label>DLCオートクリッカー</label>
+                                    <input type="number" v-model.number="saveData.dlcAutoclickers">
+                                </div>
+                            </div>
+                            <div class="consumable-item">
+                                <img src="assets/consumables/presents.webp" class="consumable-icon" @error="imgError">
+                                <div class="form-group">
+                                    <label>未開封プレゼント</label>
+                                    <input type="number" v-model.number="saveData.unopenedClickmasPresents">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <button @click="unlockAllSkins" class="btn btn-warning full-width">全オートクリッカースキン解放</button>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'heroes'">
+                    <div class="panel">
+                        <h3>ヒーロー管理</h3>
+                        <div class="actions">
+                            <button @click="gildAll(0)" class="btn">ギルド全解除</button>
+                            <button @click="maxLevels" class="btn">全レベル10000</button>
+                            <button @click="buyAllUpgradesGlobal" class="btn">全アップグレード解放</button>
+                        </div>
+                        <div class="hero-list">
+                            <div v-for="(hero, id) in saveData.heroCollection.heroes" :key="id"
+                                class="hero-item-container">
+                                <div class="hero-item">
+                                    <img :src="'assets/heroes/' + id + '.webp'" class="icon" @error="imgError">
+                                    <div class="details">
+                                        <div class="name-label">{{ getStaticName('heroes', id).name ||
+                                            getStaticName('heroes', id) }}</div>
+                                        <div class="input-row">
+                                            <label>ギルド数</label>
+                                            <input type="number" v-model.number="hero.epicLevel">
+                                        </div>
+                                        <div class="input-row">
+                                            <label>レベル</label>
+                                            <input type="number" v-model.number="hero.level">
+                                        </div>
+                                    </div>
+                                    <label class="checkbox"><input type="checkbox" v-model="hero.locked"> 未開放</label>
+                                </div>
+                                <!-- Upgrades Section -->
+                                <div class="upgrades-container" v-if="getStaticName('heroes', id).upgrades">
+                                    <div class="upgrades-header">
+                                        <span>アップグレード</span>
+                                        <button class="btn-mini btn-primary" @click="buyAllUpgrades(id)">[ 全て購入
+                                            ]</button>
+                                    </div>
+                                    <div class="upgrade-list">
+                                        <div v-for="up in getStaticName('heroes', id).upgrades" :key="up.id"
+                                            class="upgrade-item" :class="{ purchased: hasUpgrade(up.id) }"
+                                            @click="toggleUpgrade(hero, up.id)">
+                                            <div class="upgrade-icon-wrapper">
+                                                <img :src="'assets/upgrades/' + up.iconId + '.webp'" class="upgrade-img"
+                                                    @error="imgError">
+                                            </div>
+                                            <div class="upgrade-info">
+                                                <div class="upgrade-name">{{ up.name }}</div>
+                                                <div class="upgrade-desc">{{ up.description }}</div>
+                                                <div class="upgrade-cost">Cost: {{ parseBigNum({numBase: up.cost,
+                                                    numPower: 0}) }}</div>
+                                            </div>
+                                            <div class="upgrade-status">
+                                                {{ hasUpgrade(up.id) ? '[ 解放済 ]' : '[ 未解放 ]' }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'mercs'">
+                    <div class="panel">
+                        <h3>傭兵エディタ</h3>
+                        <div v-if="Object.keys(saveData.mercenaries.mercenaries).length === 0">傭兵がいません。ゲーム内で雇用してください。
+                        </div>
+                        <div v-for="(merc, id) in saveData.mercenaries.mercenaries" :key="id" class="merc-item">
+                            <div class="merc-header">
+                                <!-- Mercenary Image (Fallback to ID or gender if available later) -->
+                                <img src="assets/mercenaries/default.webp" class="merc-icon" @error="imgError"
+                                    style="width:50px; height:50px; margin-right:10px; border-radius:50%; border:2px solid #fff;">
+                                <input type="text" v-model="merc.name" class="merc-name">
+                                <button @click="reviveMerc(merc)" class="btn-mini">完全復活</button>
+                                <button @click="makeImmortal(merc)" class="btn-mini btn-danger">不死化</button>
+                            </div>
+                            <div class="merc-body">
+                                <div>
+                                    <label>レアリティ (1-8)</label>
+                                    <select v-model.number="merc.rarity">
+                                        <option value="1">Common</option>
+                                        <option value="2">Uncommon</option>
+                                        <option value="3">Rare</option>
+                                        <option value="4">Epic</option>
+                                        <option value="5">Fabled</option>
+                                        <option value="6">Mythical</option>
+                                        <option value="7">Legendary</option>
+                                        <option value="8">Transcendent</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>レベル</label>
+                                    <input type="number" v-model.number="merc.level">
+                                </div>
+                                <div>
+                                    <label>寿命 (秒)</label>
+                                    <input type="number" v-model.number="merc.timeToDie">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'items'">
+                    <div class="panel">
+                        <h3>レリック (遺物) 詳細編集</h3>
+                        <p class="hint">ボーナスID: 1=プリマル出現率, 2=プリマルソウル, 3=ルビー...</p>
+                        <div v-if="Object.keys(saveData.items.items).length === 0">アイテムがありません。</div>
+                        <div v-for="(item, uid) in saveData.items.items" :key="uid" class="relic-item">
+                            <div class="relic-row">
+                                <img :src="'assets/relics/' + (item.level > 50 ? 'high' : 'low') + '.webp'"
+                                    class="relic-icon" @error="imgError"
+                                    style="width: 48px; height: 48px; border:1px solid #ddd; margin-right: 15px;">
+                                <div style="flex:1;">
+                                    <div class="relic-header">
+                                        <h4>{{ item.name || 'Unknown Item' }}</h4>
+                                        <span class="id-badge">Lv. {{ item.level }}</span>
+                                    </div>
+                                    <div class="grid-2">
+                                        <div>
+                                            <label>レアリティ</label>
+                                            <input type="number" v-model.number="item.rarity">
+                                        </div>
+                                        <div>
+                                            <label>レベル</label>
+                                            <input type="number" v-model.number="item.level">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bonuses">
+                                <div v-for="i in 4" :key="i" class="bonus-row">
+                                    <div>
+                                        <label>効果 {{i}}</label>
+                                        <select v-model.number="item['bonusType'+i]">
+                                            <option :value="0">なし</option>
+                                            <option v-for="(name, id) in staticItemBonuses" :key="id"
+                                                :value="Number(id)">
+                                                {{ name }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>効果量</label>
+                                        <input type="text" :value="parseBigNum(item['bonus'+i+'Level'])"
+                                            @change="updateItemBigNum(item, 'bonus'+i+'Level', $event)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'ancients'">
+                    <div class="panel">
+                        <h3>エンシェント (古の神々)</h3>
+                        <div class="ancient-list">
+                            <div v-for="(ancient, id) in saveData.ancients.ancients" :key="id" class="ancient-item">
+                                <img :src="'assets/ancients/' + id + '.webp'" class="icon" @error="imgError">
+                                <div class="details">
+                                    <span class="name">{{ getStaticName('ancients', id).name ||
+                                        getStaticName('ancients', id) }}</span>
+                                    <div class="description" v-if="getStaticName('ancients', id).description"
+                                        style="font-size: 10px; color: #888;">
+                                        {{ getStaticName('ancients', id).description }}
+                                    </div>
+                                    <input type="text" :value="parseBigNum(ancient.level)"
+                                        @change="updateAncientLevel(ancient, $event)">
+                                </div>
+                                <label class="checkbox"><input type="checkbox" v-model="ancient.locked"> 未開放</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'outsiders'">
+                    <div class="panel">
+                        <h3>アウトサイダー (超越)</h3>
+                        <div class="ancient-list">
+                            <div v-for="(out, id) in saveData.outsiders.outsiders" :key="id" class="ancient-item">
+                                <img :src="'assets/outsiders/' + id + '.webp'" class="icon" @error="imgError">
+                                <div class="details">
+                                    <span class="name">{{ getStaticName('outsiders', id).name ||
+                                        getStaticName('outsiders', id) }}</span>
+                                    <div class="description" v-if="getStaticName('outsiders', id).description"
+                                        style="font-size: 10px; color: #888;">
+                                        {{ getStaticName('outsiders', id).description }}
+                                    </div>
+                                    <input type="number" v-model.number="out.level">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section v-if="currentTab === 'clan'">
+                    <div class="panel">
+                        <h3>クラン・レイド</h3>
+                        <div class="form-group">
+                            <label>ユーザー名</label>
+                            <input type="text" v-model="saveData.account.name">
+                        </div>
+                        <div class="form-group">
+                            <label>与ダメージ (Titan Damage)</label>
+                            <input type="text" :value="parseBigNum(saveData.titanDamage)"
+                                @change="updateBigNum('titanDamage', $event)">
+                        </div>
+                        <div class="form-group">
+                            <label>レイドクラスID (1:メイジ, 2:ローグ, 3:プリースト)</label>
+                            <input type="number" v-model.number="saveData.newClanRaidClassId">
+                        </div>
+                        <div class="form-group">
+                            <label>クラスレベル</label>
+                            <input type="number" v-model.number="saveData.newClanRaidClassLevel">
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <div class="landing" v-else>
+            <div class="landing-box">
+                <h2>CHSE - クリッカーヒーローズ・セーブエディタ</h2>
+                <p>セーブデータをインポートするか、初期データを作成してください。</p>
+
+                <div class="landing-actions">
+                    <button @click="createNewSave" class="btn btn-success btn-large">[ INITIALIZE NEW SAVE ]</button>
+                    <div class="or-divider">- または -</div>
+                    <textarea v-model="inputSaveData" placeholder="ここにセーブデータを貼り付け..."></textarea>
+                    <button @click="processInputData" class="btn btn-primary btn-large">[ PROCESS INPUT ]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+[
+	{
+		"name": "Mercenary",
+		"description": "Defeat %1 bosses.",
+		"iconId": 118,
+		"id": 21
+	},
+	{
+		"name": "Bounty Hunter",
+		"description": "Defeat %1 bosses.",
+		"iconId": 118,
+		"id": 22
+	},
+	{
+		"name": "Marked Target",
+		"description": "Defeat %1 bosses.",
+		"iconId": 118,
+		"id": 23
+	},
+	{
+		"name": "Shadow Stalker",
+		"description": "Defeat %1 bosses.",
+		"iconId": 118,
+		"id": 24
+	},
+	{
+		"name": "Master of Shadows",
+		"description": "Defeat %1 bosses.",
+		"iconId": 118,
+		"id": 55
+	},
+	{
+		"name": "Gladiator",
+		"description": "Defeat %1 monsters.",
+		"iconId": 118,
+		"id": 17
+	},
+	{
+		"name": "Champion",
+		"description": "Defeat %1 monsters.",
+		"iconId": 118,
+		"id": 18
+	},
+	{
+		"name": "Hero",
+		"description": "Defeat %1 monsters.",
+		"iconId": 118,
+		"id": 19
+	},
+	{
+		"name": "Legendary",
+		"description": "Defeat %1 monsters.",
+		"iconId": 118,
+		"id": 20
+	},
+	{
+		"name": "Epic",
+		"description": "Defeat %1 monsters.",
+		"iconId": 118,
+		"id": 54
+	},
+	{
+		"name": "Mythical",
+		"description": "Defeat %1 monsters.",
+		"iconId": 118,
+		"id": 72
+	},
+	{
+		"flavorText": "He'll probably come back if you defeat him.",
+		"id": 68
+	},
+	{
+		"name": "Powerful",
+		"id": 41
+	},
+	{
+		"name": "Almighty",
+		"id": 42
+	},
+	{
+        "description": "Lose %1 mercenaries.",
+		"iconId": 109,
+		"id": 104
+	},
+	{
+		"description": "Lose %1 mercenaries.",
+		"iconId": 110,
+		"id": 105
+	},
+	{
+		"description": "Lose %1 mercenaries.",
+		"iconId": 111,
+		"id": 106
+	},
+	{
+		"description": "Lose %1 mercenaries.",
+		"iconId": 112,
+		"id": 107
+	},
+	{
+		"iconId": 118,
+		"id": 61
+	},
+	{
+		"iconId": 118,
+		"id": 62
+	},
+	{
+		"iconId": 118,
+		"id": 63
+	},
+	{
+		"iconId": 118,
+		"id": 64
+	},
+	{
+		"iconId": 118,
+		"id": 65
+	},
+	{
+		"iconId": 118,
+		"id": 66
+	},
+	{
+		"iconId": 118,
+		"id": 67
+	},
+	{
+		"iconId": 118,
+		"id": 68
+	},
+	{
+		"iconId": 118,
+		"id": 69
+	},
+	{
+		"iconId": 118,
+		"id": 70
+	},
+	{
+		"iconId": 118,
+		"id": 129
+	},
+	{
+		"iconId": 118,
+		"id": 130
+	},
+	{
+		"iconId": 265,
+		"id": 125
+	},
+	{
+		"iconId": 265,
+		"id": 126
+	}
+]

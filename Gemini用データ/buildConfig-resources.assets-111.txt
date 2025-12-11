@@ -1,0 +1,12 @@
+{
+  "buildTarget": 13,
+  "buildType": 2,
+  "buildOptions": 2097288,
+  "buildPath": "Builds/Android/20073885_release.aab",
+  "scenesPath": [
+    "Assets/Scenes/Mobile/MobileStartScreen.unity",
+    "Assets/Scenes/Mobile/MobileGameplayScene.unity"
+  ],
+  "flags": 10,
+  "symbols": []
+}

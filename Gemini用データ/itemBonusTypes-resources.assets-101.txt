@@ -1,0 +1,218 @@
+[
+    {
+        "levelAmountFormula": "linear10",
+        "name": "Abandonment",
+        "id": 1,
+        "scaling": "linear",
+        "effectDescription": "+%1% DPS when idle (no clicks for 60 seconds)",
+        "ancientId": 5
+    },
+    {
+        "levelAmountFormula": "linear10",
+        "name": "Wrath",
+        "id": 2,
+        "scaling": "linear",
+        "effectDescription": "+%1% Click Damage",
+        "ancientId": 19
+    },
+    {
+        "levelAmountFormula": "linear5",
+        "name": "Time",
+        "id": 3,
+        "scaling": "cubic",
+        "effectDescription": "+%1 seconds to Boss Fight timers",
+        "ancientId": 17
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Agitation",
+        "id": 4,
+        "scaling": "linear",
+        "effectDescription": "+%1 seconds to duration of Clickstorm",
+        "ancientId": 22
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Luck",
+        "id": 5,
+        "scaling": "cubic",
+        "effectDescription": "+%1% Chance of double rubies from clickable treasures, when you get a ruby.",
+        "ancientId": 31
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Vision",
+        "id": 6,
+        "scaling": "cubic",
+        "effectDescription": "+%1 to starting zone after Ascension",
+        "ancientId": 30
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Enhancement",
+        "id": 7,
+        "scaling": "linear",
+        "effectDescription": "+%1% to Gilded damage bonus (per Gild)",
+        "ancientId": 28
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Battery Life",
+        "id": 8,
+        "scaling": "linear",
+        "effectDescription": "+%1 seconds to duration of Metal Detector",
+        "ancientId": 27
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Thieves",
+        "id": 9,
+        "scaling": "linear",
+        "effectDescription": "+%1 seconds to duration of Golden Clicks",
+        "ancientId": 26
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Accuracy",
+        "id": 10,
+        "scaling": "linear",
+        "effectDescription": "+%1 seconds to duration of Lucky Strikes",
+        "ancientId": 25
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Rage",
+        "id": 11,
+        "scaling": "linear",
+        "effectDescription": "+%1 seconds to duration of Powersurge",
+        "ancientId": 24
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Wallops",
+        "id": 12,
+        "scaling": "linear",
+        "effectDescription": "+%1 seconds to duration of Super Clicks",
+        "ancientId": 23
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Diseases",
+        "id": 13,
+        "scaling": "cubic",
+        "effectDescription": "-%1% Boss Life",
+        "ancientId": 18
+    },
+    {
+        "levelAmountFormula": "linear10",
+        "name": "Death",
+        "id": 14,
+        "scaling": "linear",
+        "effectDescription": "+%1% to Hero Soul DPS (additive)",
+        "ancientId": 16
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Murder",
+        "id": 15,
+        "scaling": "linear",
+        "effectDescription": "+%1% damage to Critical Clicks",
+        "ancientId": 15
+    },
+    {
+        "levelAmountFormula": "linear10",
+        "name": "Discovery",
+        "id": 16,
+        "scaling": "cubic",
+        "effectDescription": "+%1% more Treasure Chests",
+        "ancientId": 14
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Souls",
+        "id": 17,
+        "scaling": "cubic",
+        "effectDescription": "+%1% Chance of Primal Bosses",
+        "ancientId": 13
+    },
+    {
+        "levelAmountFormula": "linear0_25",
+        "name": "Chance",
+        "id": 18,
+        "scaling": "cubic",
+        "effectDescription": "+%1% Chance of 10x Gold",
+        "ancientId": 12
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Thrift",
+        "id": 19,
+        "scaling": "cubic",
+        "effectDescription": "-%1% Hero Hiring and Level-Up cost",
+        "ancientId": 11
+    },
+    {
+        "levelAmountFormula": "linear15",
+        "name": "Wealth",
+        "id": 20,
+        "scaling": "linear",
+        "effectDescription": "+%1% Gold from Golden Clicks",
+        "ancientId": 10
+    },
+    {
+        "levelAmountFormula": "linear25",
+        "name": "Riches",
+        "id": 21,
+        "scaling": "linear",
+        "effectDescription": "+%1% Gold From Treasure Chests",
+        "ancientId": 9
+    },
+    {
+        "levelAmountFormula": "linear5",
+        "name": "Greed",
+        "id": 22,
+        "scaling": "linear",
+        "effectDescription": "+%1% Gold Dropped",
+        "ancientId": 8
+    },
+    {
+        "levelAmountFormula": "libAndSiy",
+        "name": "Freedom",
+        "id": 24,
+        "scaling": "linear",
+        "effectDescription": "+%1% Gold gained from monsters when idle (no clicks for 60 seconds)",
+        "ancientId": 4
+    },
+    {
+        "levelAmountFormula": "solomonRewards",
+        "name": "Wisdom",
+        "id": 25,
+        "scaling": "cubic",
+        "effectDescription": "+%1% Primal Hero Souls",
+        "ancientId": 3
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Momentum",
+        "id": 26,
+        "scaling": "cubic",
+        "effectDescription": "+%1% DPS per click combo  ( active clicking )",
+        "ancientId": 29
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Shadows",
+        "id": 27,
+        "scaling": "cubic",
+        "effectDescription": "-%1 monsters required to advance to the next level",
+        "ancientId": 21
+    },
+    {
+        "levelAmountFormula": "linear1",
+        "name": "Impatience",
+        "id": 28,
+        "scaling": "cubic",
+        "effectDescription": "-%1% skill cooldowns",
+        "ancientId": 20
+    }
+]

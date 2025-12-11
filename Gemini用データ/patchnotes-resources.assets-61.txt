@@ -1,0 +1,1154 @@
+[
+	{
+		"version" : "",
+		"mobileVersion" : "",
+		"revision" : "",
+		"date": "June 13th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Notable changes:",
+			" * Mobile now has the same sound settings as desktop.",
+			" * Better price displays for heroes, ancients, outsiders, upgrades, and shop offerings.",
+			" * You can now hold down the leveling buttons for heroes and ancients to level them up quickly.",
+			" * Improve clan chat language support.",
+			"",
+			"Bug fixes:",
+			" * Fixed long press not assigning all autoclickers for legacy raid fights.",
+			" * Fixed achievements not synching properly with the Google Play Store."
+		]
+	},
+	{
+		"version" : "1.0e12-3444",
+		"mobileVersion" : "",
+		"revision" : "",
+		"date": "June 8th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixed some localization and typos.",
+			" * Makes it clear if a clan leader has locked an immortal raid's progress.",
+			" * Fixed an edge case where finishing a mercenary recruitment quest sometimes didn't show the new mercenary properly.",
+			" * Performance improvements and UI tweaks."
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3424",
+		"revision" : "",
+		"date": "June 5th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Notable changes:",
+			" * Added flavor text to upgrades UI.",
+			" * Increased size of the dismiss button for mercenaries.",
+			" * Hard Reset is available for Android in the options popup.",
+			"",
+			"Bug fixes:",
+			" * Fixed an edge case where finishing a mercenary recruitment quest sometimes didn't show the new mercenary properly.",
+			" * Fixed the background for the desert zones not displaying.",
+			" * Performance improvements."
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3397",
+		"revision" : "",
+		"date": "May 30th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Notable changes:",
+			" * Makes it clear if a clan leader has locked an immortal raid's progress.",
+			"",
+			"Bug fixes:",
+			" * Certain settings no longer reset after transcending.",
+			" * Collecting raid rewards now syncs across all devices.",
+			" * The alert icon on the relics button is now cleared after salvaging any relics that weren't tapped."
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3379",
+		"revision" : "",
+		"date": "May 25th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Bug fixes:",
+			" * Mobile notifications are less spammy.",
+			" * Critical hits no longer shake the screen.",
+			" * Mercenary quips are visible again."
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3352",
+		"revision" : "",
+		"date": "May 22nd, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Notable changes:",
+			" * Added a button in the options popup to recover save data from version 2.7.1.",
+			" * Holding down the auto-tapper button at the top of the screen now removes all assigned auto-tappers.",
+			" * Increased size of relics in all displays.",
+			" * Increased size of zone selection buttons.",
+			"",
+			"Bug fixes:",
+			" * Fixed game not loading for gamers with legacy saves.",
+			" * Fixed legacy raids rewards exploit.",
+			" * Fixed auto-tapper skin selection not opening after tapping the auto-tapper button in the top display.",
+			" * Fixed outsiders not leveling up correctly in some cases.",
+			" * Fixed the ascension souls count not factoring in hero levels.",
+			" * Fixed text color irregularities in the stats popup.",
+			" * Increased the X button size on auto-tappers."
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3324",
+		"revision" : "",
+		"date": "May 19th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Bug fixes:",
+			" * Tweaked timeout for signing into mobile accounts.",
+			" * Fixed functionality of leveling popup for ancients.",
+			" * Fixed lock/unlock functionality on new immortal raids.",
+			" * Fixed clan members not sorting by class level when \"Show HZE\" is disabled.",
+			" * Fixed too many gold coins showing on the screen and hindering performance",
+			" * Fixed game sometimes locking up after being put into the background"
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3306",
+		"revision" : "",
+		"date": "May 17th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"Bug fixes:",
+			" * Fixed bug where adding an auto-tapper to a hero would also add one to the monster.",
+			" * Fixed hero level button coloration when cycling through how many levels to purchase.",
+			" * Fixed ancient level scaling when cycling through how many levels to purchase.",
+			" * Fixed various text not localizing properly.",
+			" * Tweeked button and font colors to be closer to what they used to look like."
+		]
+	},
+	{
+		"version" : "",
+		"mobileVersion" : "2.7.3290",
+		"revision" : "",
+		"date": "May 16th, 2023",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"New game engine",
+			" * Clicker Heroes has been ported to a new game engine.",
+			"",
+			"Notable changes:",
+			" * There is tooltip text explaining increased monster health after surpassing zone 501 without first transcending.",
+			" * You can now long-press on the tap area to assign all remaining auto tappers to monsters.",
+			"",
+			"Bug fixes:",
+			" * The Christmas minigame has been fixed so that the Hexmas Tree is not so easily defeated.",
+			" * Fixed Juggernaut combo bug."
+		]
+	},
+	{
+		"version" : "1.0e12-3273",
+		"mobileVersion" : "",
+		"revision" : "",
+		"date": "May 12th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixed edge case where auto clickers would not purchase the maximum number of hero levels under very specific circumstances.",
+			" * Fixed the cost of a quick ascension not displaying in other languages when viewing the ascension confirmation popup."
+		]
+	},
+	{
+		"version" : "1.0e12-3211",
+		"mobileVersion" : "2.7.3211",
+		"revision" : "",
+		"date": "April 28th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixed Ancient entries not updating after swapping items around.",
+			" * Fixed some annoyances with the mercenary tooltip not always showing up if the mouse is moved too fast."
+		]
+	},
+	{
+		"version" : "1.0e12-3203",
+		"mobileVersion" : "2.7.3203",
+		"revision" : "3203",
+		"date": "April 27th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Made it so flying damage text sorts below the monster autoclickers.",
+			" * Fixed the game sometimes becoming unresponsive on load if the internet connection was too slow.",
+			" * Fixed spiked nog sometimes showing stacked amount after the effect already wore off."
+		]
+	},
+	{
+		"version" : "1.0e12-3182",
+		"mobileVersion" : "2.7.3182",
+		"revision" : "3182",
+		"date": "April 24th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixed multiple background music tracks playing after ascending or transcending.",
+			" * Fixed various missing and overlapping text for certain languages."
+		]
+	},
+	{
+		"version" : "1.0e12-3138",
+		"mobileVersion" : "2.7.3138",
+		"revision" : "3138",
+		"date": "April 18th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Reverts post-trascension click damage changes from v1.0e12-3120.",
+			" * Fixes wrong CSV file being generated when exporting ascension data."
+		]
+	},
+	{
+		"version" : "1.0e12-3120",
+		"mobileVersion" : "2.7.3120",
+		"revision" : "3120",
+		"date": "April 12th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * There is tooltip text explaining increased monster health after surpassing zone 501 without first transcending.",
+			"",
+			"Bug fixes:",
+			" * Fixes bonus click damage granted from achievements being reset when transcending.",
+			" * Fixes certain text not having \"best fit\" enabled and messing up displays in Arabic.",
+			" * Fixes a stray hero souls tooltip in the hero's panel before it was ready to be seen."
+		]
+	},
+	{
+		"version" : "1.0e12-2918",
+		"mobileVersion" : "2.7.2918",
+		"revision" : "2918",
+		"date": "February 27th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes float point precision issue when calculating maximum immortal health.",
+			" * Fixes display issue where a defeated immortal still showed health.",
+			" * Fixes legacy raid timer not resetting after the day's raid is over."
+		]
+	},
+	{
+		"version" : "1.0e12-2885",
+		"mobileVersion" : "2.7.2885",
+		"revision" : "2885",
+		"date": "February 23rd, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes bug preventing new clan members from selecting a class and participating in new Immortal raids."
+		]
+	},
+	{
+		"version" : "1.0e12-2868",
+		"mobileVersion" : "2.7.2868",
+		"revision" : "2868",
+		"date": "February 22nd, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * The popup stating to wait before sending another message in clan chat now displays exactly how many seconds to wait.",
+			" * Fixes clan panel not showing anything after importing save data."
+		]
+	},
+	{
+		"version" : "1.0e12-2863",
+		"mobileVersion" : "2.7.2863",
+		"revision" : "2863",
+		"date": "February 21st, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes the mouse wheel not scrolling some parts of the UI."
+		]
+	},
+	{
+		"version" : "1.0e12-2858",
+		"mobileVersion" : "2.7.2858",
+		"revision" : "2858",
+		"date": "February 21st, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Took steps to improve font readability for non-English localizations.",
+			"",
+			"Bug fixes:",
+			" * Fixes some clan related notifications showing up at the wrong times when the game has been idle for an extended period of time."
+		]
+	},
+	{
+		"version" : "1.0e12-2787",
+		"mobileVersion" : "2.7.2787",
+		"revision" : "2787",
+		"date": "February 7th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Removes unnecessary confirmation windows when gilding heroes."
+		]
+	},
+	{
+		"version" : "1.0e12-2774",
+		"mobileVersion" : "2.7.2774",
+		"revision" : "2774",
+		"date": "February 7th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes spammy 'Zone Failed' browser notifications.",
+			" * Fixes critical damage text not being displayed properly if 'Critical Screen Shake' is disabled in the player's settings.",
+			" * Fixes grammer mistake in the flavor text for The Maw's 'Metabolic Juice'."
+		]
+	},
+	{
+		"version" : "1.0e12-2704",
+		"mobileVersion" : "2.7.2704",
+		"revision" : "2704",
+		"date": "January 27th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes the wrong monster sometimes showing when moving into a new environment."
+		]
+	},
+	{
+		"version" : "1.0e12-2702",
+		"mobileVersion" : "2.7.2702",
+		"revision" : "2702",
+		"date": "January 26th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes some tabs not displaying properly."
+		]
+	},
+	{
+		"version" : "1.0e12-2700",
+		"mobileVersion" : "2.7.2700",
+		"revision" : "2700",
+		"date": "January 26th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes relics not affecting ancient levels.",
+			" * Fixes tooltips not displaying after tabbing away from the game."
+		]
+	},
+	{
+		"version" : "1.0e12-2698",
+		"mobileVersion" : "2.7.2698",
+		"revision" : "2698",
+		"date": "January 26th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Performance improvements! The game should now better handle bringing the browser tab back into focus after being idle for several hours.",
+			"",
+			"Bug fixes:",
+			" * Alert on clan tab no longer shows if you are waiting to be let into a clan.",
+			" * Fixes only being able to buy one level at a time if the cost of a hero is zero gold.",
+			" * Adjusts the speed of some scrollable content.",
+			" * Corrects a flavor text typo in one of Ceus's upgrades.",
+			" * Fixes a minor text formatting issue for large numbers."
+		]
+	},
+	{
+		"version" : "1.0e12-2582",
+		"mobileVersion" : "2.7.2582",
+		"revision" : "2582",
+		"date": "January 4th, 2023",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes clan chat not displaying properly if messages contained certain characters.",
+			" * Returning to the game after leaving it on in a background tab should now use less CPU and memory intensive.",
+			" * Fixes pending clan members seeing notifications for the clan they wished to join."
+		]
+	},
+	{
+		"version" : "1.0e12-2571",
+		"mobileVersion" : "2.7.2571",
+		"revision" : "2571",
+		"date": "December 21st, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes decimal precision issue that sometimes showed cost to level up heroes as zero."
+		]
+	},
+	{
+		"version" : "1.0e12-2561",
+		"mobileVersion" : "2.7.2561",
+		"revision" : "2561",
+		"date": "December 20th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes more music issues related to the transcendence tab."
+		]
+	},
+	{
+		"version" : "1.0e12-2559",
+		"mobileVersion" : "2.7.2559",
+		"revision" : "2559",
+		"date": "December 19th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes cost to level up heroes sometimes showing as zero.",
+			" * Fixes music issues when clicking on the transcendence tab.",
+			" * Fixes relic achievements not firing off immediately upon completion."
+		]
+	},
+	{
+		"version" : "1.0e12-2505",
+		"mobileVersion" : "2.7.2505",
+		"revision" : "2505",
+		"date": "December 8th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Clickables are no longer unclickable if you entered a raid before clicking on them."
+		]
+	},
+	{
+		"version" : "1.0e12-2497",
+		"mobileVersion" : "2.7.2497",
+		"revision" : "2497",
+		"date": "December 8th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Orangefish and other clickables are now hidden during raid fights.",
+			" * Corrects typos in the flavor text for Skogur's Pedunculate Oaken Hammer."
+		]
+	},
+	{
+		"version" : "1.0e12-2480",
+		"mobileVersion" : "2.7.2480",
+		"revision" : "2480",
+		"date": "December 5th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes raid damage inconsistencies.",
+			" * Fixes being able to interact with clickables like the Orangefish while popups were open.",
+			" * Fixes dancing exclamation marks on mercenary and transcendence tabs sometimes not going away when the tab is clicked.",
+			" * Fixes Next AS text in the transcendence panel not updating after earning primal hero souls.",
+			" * No longer shows notifications for mercenaries when on the first ascension of a new transcension."
+		]
+	},
+	{
+		"version" : "1.0e12-2469",
+		"mobileVersion" : "2.7.2469",
+		"revision" : "2469",
+		"date": "December 2nd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes missing browser notifications for immortal raids.",
+			" * Fixes phantom presents being rewarded by the Hexmas tree.",
+			" * Clickmas minigame more closely matches its Steam counterpart."
+		]
+	},
+	{
+		"version" : "1.0e12-2456",
+		"mobileVersion" : "2.7.2456",
+		"revision" : "2456",
+		"date": "November 30th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Shows browser notification when your clan finishes a raid.",
+			"",
+			"Bug fixes:",
+			" * Fixes forge core values not displaying in shortened form in text.",
+			" * Restores Clickstorm and Golden Clicks after fighting the Hexmas Tree."
+		]
+	},
+	{
+		"version" : "1.0e12-2433",
+		"mobileVersion" : "2.7.2433",
+		"revision" : "2433",
+		"date": "November 25th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes visual issues for Clickmas."
+		]
+	},
+	{
+		"version" : "1.0e12-2424",
+		"mobileVersion" : "2.7.2424",
+		"revision" : "2424",
+		"date": "November 23rd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes issue with receiving relics for Clickmas crashing the game."
+		]
+	},
+	{
+		"version" : "1.0e12-2421",
+		"mobileVersion" : "2.7.2421",
+		"revision" : "2421",
+		"date": "November 23rd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes missing Christmas quests for mercenaries."
+		]
+	},
+	{
+		"version" : "1.0e12-2401",
+		"mobileVersion" : "2.7.2401",
+		"revision" : "2401",
+		"date": "November 18th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes not being able to move relics."
+		]
+	},
+	{
+		"version" : "1.0e12-2392",
+		"mobileVersion" : "2.7.2392",
+		"revision" : "2392",
+		"date": "November 17th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			" * English flavor text for Libertas now displays properly.",
+			" * Enabled holding down the left and right buttons on the zone selector to quickly scroll through zone buttons.",
+			" * Text in tooltips for heroes and ancient update immediately after clicking to level them up."
+		]
+	},
+	{
+		"version" : "1.0e12-2341",
+		"mobileVersion" : "2.7.2341",
+		"revision" : "2341",
+		"date": "November 9th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes more save data import issues."
+		]
+	},
+	{
+		"version" : "1.0e12-2336",
+		"mobileVersion" : "2.7.2336",
+		"revision" : "2336",
+		"date": "November 8th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes some save data import issues."
+		]
+	},
+	{
+		"version" : "1.0e12-2328",
+		"mobileVersion" : "2.7.2328",
+		"revision" : "2328",
+		"date": "November 2nd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes mercenaries showing negative chance of extra rewards.",
+			" * Adds support for command keys to be used in lieu of control keys for MacOS."
+		]
+	},
+	{
+		"version" : "1.0e12-2323",
+		"mobileVersion" : "2.7.2323",
+		"revision" : "2323",
+		"date": "November 1st, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes MAX leveling not purchasing as many levels as it can.",
+			" * Fixes rounding issues caused by .Net's default \"banker's rounding\" behavior."
+		]
+	},
+	{
+		"version" : "1.0e12-2319",
+		"mobileVersion" : "2.7.2319",
+		"revision" : "2319",
+		"date": "October 26th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Added a setting to toggle off floating text saying how many primal souls the player received.",
+			"",
+			"Bug fixes:",
+			" * Fixes how forward slashes are handled when parsing clan chat.",
+			" * Fixes clan auto-join checkbox not immediately updating after toggling it.",
+			" * Fixes leveling issue when the first hero level costs 0 gold but the player has \"MAX\" toggled on."
+		]
+	},
+	{
+		"version" : "1.0e12-2306",
+		"mobileVersion" : "2.7.2306",
+		"revision" : "2306",
+		"date": "October 20th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			"* Fixes Halloween boss not displaying properly.",
+			"* Fixes Clickstorm not resuming after finishing raids."
+		]
+	},
+	{
+		"version" : "1.0e12-2298",
+		"mobileVersion" : "2.7.2298",
+		"revision" : "2298",
+		"date": "October 18th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes overly-zealous popup that always wants to show how many platforms Clicker Heroes is on during each transcension.",
+			" * Fixes Chor'gorloth exceeding their maximum intended level.",
+			" * Fixes some text not showing in certain languages.",
+			" * Fixes floating point precision issue that sometimes resulted in Ancients costing zero hero souls to level up.",
+			" * Fixes how gold earned per minute is calculated."
+		]
+	},
+	{
+		"version" : "1.0e12-2280",
+		"mobileVersion" : "2.7.2280",
+		"revision" : "2280",
+		"date": "October 13th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Exporting saves now exits fullscreen mode before downloading save data and copying it to the clipboard. ",
+			"",
+			"Bug fixes:",
+			" * Fixes unpurchased upgrades not displaying cooldowns for skills they unlock.",
+			" * Fixes members in the clan management panel not being sorted by highest zone reached.",
+			" * Fixes left zone navigation button sometimes letting the player cycle zone buttons off the screen.",
+			" * Fixes hero cost text showing the wrong color sometimes after multi-leveling a hero.",
+			" * Fixes phantom autoclicker getting stuck on hero leveling/upgrades/skills sometimes when detaching all autoclickers after using Clickstorm.",
+			" * Promotional popups only display now if there are no other popups and the player is not fighting a boss or a raid.",
+			" * Tweaks to monster HUD."
+		]
+	},
+	{
+		"version" : "1.0e12-2253",
+		"mobileVersion" : "2.7.2253",
+		"revision" : "2253",
+		"date": "October 6th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes text not updating properly when importing save data with a different language setting.",
+			" * Fixes mercenary panel scrolling all the way to the bottom when first opened.",
+			" * Fixes rounding error with the number of Ancient Souls required to purchase an Outsider.",
+			" * Fixes holding the 'C' key to detach all auto-clickers also removing the auto-clicker for Clickstorm.",
+			" * Fixes current autoclicker skin not being saved."
+		]
+	},
+	{
+		"version" : "1.0e12-2233",
+		"mobileVersion" : "2.7.2233",
+		"revision" : "2233",
+		"date": "October 4th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes issues with browser notifications on Firefox.",
+			" * Fixes lost progress when the browser window is minimized."
+		]
+	},
+	{
+		"version" : "1.0e12-2228",
+		"mobileVersion" : "2.7.2228",
+		"revision" : "2228",
+		"date": "October 3rd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes ancient options re-rolling when there weren't enough hero souls to summon one.",
+			" * Fixes overly aggressive browser notifications for mercenaries.",
+			" * Fixes monsters going invisible after participating in a raid."
+		]
+	},
+	{
+		"version" : "1.0e12-2211",
+		"mobileVersion" : "2.7.2211",
+		"revision" : "2211",
+		"date": "September 30th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Tweaks to how browser notifications are handled.",
+			" * Better error checks for when save data fails to load.",
+		]
+	},
+	{
+		"version" : "1.0e12-2205",
+		"mobileVersion" : "2.7.2205",
+		"revision" : "2205",
+		"date": "September 29th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * The game now supports showing browser notifications for when a mercenary finishes a quest or dies, or when you fail a boss.",
+			" * Added some code to better manage loading and unloading of assets.",
+			"",
+			"Bug fixes:",
+			" * Not being able to upgrade ancients in some instances when 'Multi-level to every Nth level' is enabled.",
+			" * Fixes forge core text in the relics panel not updating after transcending.",
+			" * Fixes some chat messages not loading correctly.",
+			" * If the monster limit dips below five per zone, the next zone's assets will load sooner."
+		]
+	},
+	{
+		"version" : "1.0e12-2167",
+		"mobileVersion" : "2.7.2167",
+		"revision" : "2167",
+		"date": "September 27th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes players being able to join full clans.",
+			" * Fixes text getting cut off in the relic upgrade popup.",
+			" * Fixes some relic properties not upgrading properly.",
+			" * Fixes rounding error that caused players to need one more gold or hero soul than shown to level a hero or ancient, or purchase an upgrade.",
+			" * Fixes crash when purchasing a lot of levels for Morgulis.",
+			" * Fixes issue with newly available heroes not showing immediately unless the scrollbar is moved.",
+			" * Fixes crash when some new players tried to access the clan panel.",
+			" * Fixes using the zone buttons to go forward/backwards causing boss assets to not load properly in some instances.",
+			" * Fixes finishing a raid backing all the way out to clan chat instead of remaining on the raid panel.",
+			" * Plugs memory leak."
+		]
+	},
+	{
+		"version" : "1.0e12-2149",
+		"mobileVersion" : "2.7.2149",
+		"revision" : "2149",
+		"date": "September 23rd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * The game will now ask you to select your language on load if you haven't done so already.",
+			"",
+			"Bug fixes:",
+			" * Fixes issues with malformed timestamps.",
+			" * Fixes the first monster of each zone disappearing when progression mode is active.",
+			" * Some bosses that previously shared assets with non-boss monsters (Big Angry Potato, Big Shroom Sage, King Loggernaut) now have their own, larger assets."
+		]
+	},
+	{
+		"version" : "1.0e12-2106",
+		"mobileVersion" : "2.7.2106",
+		"revision" : "2106",
+		"date": "September 20th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes issues with clan chat not showing up if a message contains quotation marks.",
+			" * Fixes exclamation mark on the mercenaries tab sometimes not going away.",
+			" * Fixes the Click Storm autoclicker disappearing if you refresh the page after activating Click Storm.",
+			" * No more Solomon relics.",
+			" * Navigating away from, and then back to, the Clan tab will now immediately refresh the tab."
+		]
+	},
+	{
+		"version" : "1.0e12-2083",
+		"mobileVersion" : "2.7.2083",
+		"revision" : "2083",
+		"date": "September 16th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes issues with mercenary UI not updating properly after importing save data.",
+			" * Fixes issues with salvageable relics UI not updating properly in some instances after obtaining a new relic.",
+		]
+	},
+	{
+		"version" : "1.0e12-2072",
+		"mobileVersion" : "2.7.2072",
+		"revision" : "2072",
+		"date": "September 15th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Updated external code library to fix a memory leak.",
+			" * Re-exported monster assets at a higher resolution so they are less blurry during gameplay.",
+			" * Tweaks to fix disappearing monsters.",
+			" * Fixes sides of the game bleeding out of the screen on monitors with 16:10 aspect ratios when in fullscreen mode.",
+			" * Fixes Steam DLC autoclicker skins affecting autoclicker price.",
+			" * Fixes Steam DLC autoclicker skin tooltips claiming the skins were purchasable on web when they aren't."
+		]
+	},
+	{
+		"version" : "1.0e12-2044",
+		"mobileVersion" : "2.7.2044",
+		"revision" : "2044",
+		"date": "September 13th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes first monster of a zone not displaying if animated monsters are disabled.",
+			" * Fixes Autoclickers and Clickstorm not contributing to the \"Clicks per second\" count in the stats panel.",
+			" * Long messages not displaying properly in clan chat.",
+			" * Mercenary dialogue balloons remaining on screen sometimes.",
+			" * Mercenary couldn't be revived with rubies if they had bonus lives.",
+			" * Various code optimizations."
+		]
+	},
+	{
+		"version" : "1.0e12-2024",
+		"mobileVersion" : "2.7.2024",
+		"revision" : "2024",
+		"date": "September 9th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"New Setting:",
+			" * Added a setting to toggle appending the current date and time to exported saves and ascension/transcension CSVs.",
+			"",
+			"Bug fixes:",
+			" * Fixes an issue where Ancients sometimes couldn't be summoned.",
+			" * Fixes an issue where Mercenaries activating Reload before any other skills were properly unlocked for the current ascension could cause the game to crash.",
+			" * Various code optimizations."
+		]
+	},
+	{
+		"version" : "1.0e12-1998",
+		"mobileVersion" : "2.7.1998",
+		"revision" : "1998",
+		"date": "September 7th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixes check marks not showing up on hero upgrades after clicking \"Purchase all available upgrades\" button.",
+			" * Fixes Ancients slow tweening in summon popup.",
+			" * Fixes Nth level setting not playing nice with MAX level + autoclickers.",
+			" * Fixes zero click damage after adding approximately 103 autoclickers to a monster.",
+			" * Refactored code for loading and displaying monsters.",
+			" * Various performance tweaks."
+		]
+	},
+	{
+		"version" : "1.0e12-1971",
+		"mobileVersion" : "2.7.1971",
+		"revision" : "1971",
+		"date": "September 6th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug fixes:",
+			" * Fixed text for forge core displaying the wrong amounts in the relics panel.",
+			" * Fixed missing question mark button for buying gilded heroes in the shop."
+		]
+	},
+	{
+		"version" : "1.0e12-1922",
+		"mobileVersion" : "2.7.1922",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"revision" : "1922",
+		"date": "August 30th, 2022",
+		"notes": [
+			"Bug fixes:",
+			" * Fixes some data not importing properly.",
+			" * Fixes reward text for mercenaries on gold quests not updating properly as gameplay progresses."
+		]
+	},
+	{
+		"version" : "1.0e12-1915",
+		"mobileVersion" : "2.7.1915",
+		"revision" : "1915",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"date": "August 29th, 2022",
+		"notes": [
+			"Notable changes:",
+			" * Added a setting to change multi-leveling to every Nth level instead of +N levels (apologies in advance, as the text for this has not been localized yet).",
+			"",
+			"Bug fixes:",
+			" * Fixes most critical clicks per second not getting saved.",
+			" * Fixes boss zone not resetting when clicking on the zone icon.",
+			" * Fixes wrong ruby price for buying random relics.",
+			" * Fixes shop prices not displaying if the player's language was not set to English.",
+			" * Fixes orange fish getting permanently stuck in some situations.",
+			" * Fixes upgrading a relic not refreshing ancient description text.",
+			" * Fixes transcensions not maximizing heroes and ancients that were previously minimized.",
+			" * Fixes tooltip missing for ancient respec button.",
+			" * Fixes zone icons missing some text if the player's language was not set to English.",
+			" * Fixes bumbler ignoring disabled \"Animated Monster\" setting.",
+			" * Fixes new clan members who had not chosen a class displaying a class icon.",
+			" * Fixes clan text display issues.",
+			" * Fixes notification text positioning issues.",
+			" * Fixes missing \" + N HS Next Ascent\" text."
+		]
+	},
+	{
+		"version" : "1.0e12-1884",
+		"mobileVersion" : "2.7.1884",
+		"revision" : "1884",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"date": "August 26th, 2022",
+		"notes": [
+			"Notable changes:",
+			" * Numerous Performance tweaks.",
+			" * Doubled the minimum distance required to pick up gold using the mouse.",
+			"",
+			"Bug fixes:",
+			" * Fixes precision error issue where the game would sometimes crash if leveling heroes, ancients, or outsiders by large amounts.",
+			" * Added missing tooltips for progression button, hero souls texts, ancient souls texts, and transcendence power texts.",
+			" * Fixes issue where a gilded hero's name was not localized in the popup to open newly gilded heroes.",
+			" * Fixes issue where gilding a hero did not refresh the text showing the hero's damage",
+			" * Fixes issue where buying an upgrade for Cid did not refresh the text showing Cid's damage.",
+			" * Fixes issue where a hero's individual damage text did not honor the player's settings to turn it off.",
+			" * Fixes issue where the \"Transcend For\" text in the transcendence panel sometimes didn't display the correct ascension souls amount.",
+			" * Fixed pixelation in clan UI screens."
+		]
+	},
+	{
+		"version" : "1.0e12-1850",
+		"mobileVersion" : "2.7.1850",
+		"revision" : "1850",
+		"date": "August 24th, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Bug Fixes:",
+			" * Attempts to fixe issues with entering/exiting fullscreen mode.",
+			" * Fixes issue where brand new players were seeing offline progress popup.",
+			" * Fixes issue where damage text was showing on top of the monster autoclicker, making it difficult to remove.",
+			" * Fixes quests with a chance of getting a relic always rewarding nothing.",
+			" * Fixes bug with autoclickers on hero reading input from Shift/Control/Z/Q when leveling.",
+			" * Fixes bug with Golden Clicks not displaying platinum coins even when Fortuna guarantees a 100% chance."
+		]
+	},
+	{
+		"version" : "1.0e12-1839",
+		"mobileVersion" : "2.7.1839",
+		"revision" : "1839",
+		"date": "August 23nd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * When exporting saves, the game now attempts to copy the export data to the clipboard in addition to downloading a text file.",
+			" * When exporting saves, the local date and time are now appended to the name of the generated text file.",
+			"",
+			"Bug fixes:",
+			" * Fixes \"+[amount] Primal Souls\" text showing the entire amount of Primal Souls instead of the amount just earned.",
+			" * Fixes exclamation mark not going away on the Outsiders/Transcendence tab if clicked between zones 160 and 299.",
+			" * Fixes bug that caused 50 or more autoclickers on monsters to do zero damage.",
+			" * Fixes bug where importing save data while the bumbler bee was spawned allowed it to be clicked a near infinite number of times and reward something on each click."
+		]
+	},
+	{
+		"version" : "1.0e12-1828",
+		"mobileVersion" : "2.7.1828",
+		"revision" : "1828",
+		"date": "August 22nd, 2022",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"Notable changes:",
+			" * Hacked in some very basic copy/paste capabilities for the Ancient level up popup and email text fields.",
+			" * Added a loading animation when the web page first opens up.",
+			" * Tweaked spacing of hero entries when they are minimized.",
+			"",
+			"Bug fixes:",
+			" * Fixes game not updating as well as it should when browser is minimized.",
+			" * Fixes SHIFT+C not adding available autoclickers to the monster.",
+			" * Fixes previously available quest options changing immediately after hiring any new mercenary with rubies.",
+			" * Fixes Ancient and Outsider level up buttons not letting you purchase multiple levels at a time if you didn't have exactly enough hero/ancient souls.",
+			" * Fixes shop button text getting cut off in some localizations.",
+			" * Fixes seeing Outsiders before zone 300.",
+			" * Fixes additional monsters being added before zone 500.",
+			" * Fixes wrong localized hero name displaying for locked skills in the skill bar.",
+			" * Fixes skills activated from a mercenary quest invoking the skill's cooldown.",
+			" * Fixes autoclicker positioning for heroes."
+		]
+	},
+	{
+		"version" : "1.0e12",
+		"mobileVersion" : "1.0e12 (2.7.0.0)",
+		"revision" : "",
+		"date": "June 9th, 2020",
+		"showOnMobile" : true,
+		"showOnDesktop" : false,
+		"notes": [
+			"New Raid System:",
+			" * We have revamped the entire clan tab with a new UI and a whole new raid system.",
+			" * The new raid system rewards two currencies: Rubies and Immortal Souls",
+			"",
+			"New Feature: Raid Progression",
+			" * Immortal Souls can be used to increase your level and thus, increase your damage per click against Immortals.",
+			" * While you'll start off gaining only small amounts of rubies, the stronger you grow, the more rubies you'll earn by defeating higher level Immortals.",
+			"",
+			"New Feature: Raid Classes.",
+			" * Raids now have you choose one of the three classes to do battle against Immortals: Rogue, Mage, or Priest",
+			" * Immortals are weak to a different one of the classes everyday so work with your raid to have all the types covered.",
+			"",
+			"New Feature: Bonus Fights.",
+			" * After completing an Immortal for the day, your clan has the option to buy an additional fight for rubies based on the level of the Immortal.",
+			" * The bonus fight allows you to gain even more Rubies and Immortal Souls per day.",
+			" * Only one member has to pay for the whole clan so work with your clan to spread the wealth.",
+			"",
+			"New Feature: Immortal Locking.",
+			" * Immortals in the new system are much tougher than before and some will require farming in order to beat.",
+			" * Clan Masters will be able to stop the automatic progression of Immortal fights so that they can stay on an Immortal they can beat and therefore continue to get rewards.",
+			"",
+			"New Feature: Check-In",
+			" * Not every Immortal will take your entire roster of ten to beat so as long as you show up for the day, even if the Immortal is dead, you can check-in for the rewards.",
+			" * Adds achievements for beating zones 100000, 250000, and 1000000.",
+			"",
+			"Apart from those features, here are some other key differences compared to the old system:",
+			" * Only 3 Autoclickers are allowed in the fight at a time",
+			" * The fight timer is 16 seconds",
+			" * Only the best of your scores counts against the Immortal but you can pay 10 rubies to try to improve your score.",
+			"",
+			"Legacy Raid System:",
+			" * If you liked the old system, you can still do those!",
+			" * The old raid system has been renamed to \"Legacy Raids\"",
+			" * In the new UI, it has been placed in the third tab from the top",
+			"",
+			"Miscellaneous:",
+			" * We have revamped the entire clan tab with a new UI that should hopefully make clans easier to communicate with and manage.",
+			" * There is now an option to respec your clan class in the options menu.",
+			"",
+			"Bug fixes:",
+			" * Fixes a bug that prevented HZE from going over 1,000,000 in the clan roster.",
+			" * Fixes a bug that allowed Autoclickers to deal damage after the timer ended on Immortals.",
+			" * Various bug fixes.",
+			"",
+			"For more information, please visit https://www.reddit.com/r/ClickerHeroes/"
+		]
+	},
+	{
+		"version" : "1.0e12",
+		"mobileVersion" : "2.7.0.0",
+		"revision" : "",
+		"date": "May 19th, 2020",
+		"showOnMobile" : false,
+		"showOnDesktop" : true,
+		"notes": [
+			"New Raid System:",
+			" * We have revamped the entire clan tab with a new UI and a whole new raid system.",
+			" * The new raid system rewards two currencies: Rubies and Immortal Souls",
+			"",
+			"New Feature: Raid Progression",
+			" * Immortal Souls can be used to increase your level and thus, increase your damage per click against Immortals.",
+			" * While you'll start off gaining only small amounts of rubies, the stronger you grow, the more rubies you'll earn by defeating higher level Immortals.",
+			"",
+			"New Feature: Raid Classes.",
+			" * Raids now have you choose one of the three classes to do battle against Immortals: Rogue, Mage, or Priest",
+			" * Immortals are weak to a different one of the classes everyday so work with your raid to have all the types covered.",
+			"",
+			"New Feature: Bonus Fights.",
+			" * After completing an Immortal for the day, your clan has the option to buy an additional fight for rubies based on the level of the Immortal.",
+			" * The bonus fight allows you to gain even more Rubies and Immortal Souls per day.",
+			" * Only one member has to pay for the whole clan so work with your clan to spread the wealth.",
+			"",
+			"New Feature: Immortal Locking.",
+			" * Immortals in the new system are much tougher than before and some will require farming in order to beat.",
+			" * Clan Masters will be able to stop the automatic progression of Immortal fights so that they can stay on an Immortal they can beat and therefore continue to get rewards.",
+			"",
+			"New Feature: Check-In",
+			" * Not every Immortal will take your entire roster of ten to beat so as long as you show up for the day, even if the Immortal is dead, you can check-in for the rewards.",
+			" * Adds achievements for beating zones 100000, 250000, and 1000000.",
+			"",
+			"Apart from those features, here are some other key differences compared to the old system:",
+			" * Only 3 Autoclickers are allowed in the fight at a time",
+			" * The fight timer is 16 seconds",
+			" * Only the best of your scores counts against the Immortal but you can pay 10 rubies to try to improve your score.",
+			"",
+			"Legacy Raid System:",
+			" * If you liked the old system, you can still do those!",
+			" * The old raid system has been renamed to \"Legacy Raids\"",
+			" * In the new UI, it has been placed in the third tab from the top",
+			"",
+			"Miscellaneous:",
+			" * We have revamped the entire clan tab with a new UI that should hopefully make clans easier to communicate with and manage.",
+			" * There is now an option to respec your clan class in the options menu.",
+			"",
+			"Bug fixes:",
+			" * Fixes a bug that prevented HZE from going over 1,000,000 in the clan roster.",
+			" * Fixes a bug that allowed Autoclickers to deal damage after the timer ended on Immortals.",
+			" * Various bug fixes.",
+			"",
+			"For more information, please visit https://www.reddit.com/r/ClickerHeroes/"
+		]
+	}
+]

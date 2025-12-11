@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Defeat",
+        "id": 14
+    },
+    {
+        "name": "Destruction",
+        "id": 15
+    }
+]

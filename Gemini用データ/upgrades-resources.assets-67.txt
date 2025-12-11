@@ -1,0 +1,169 @@
+[
+    {
+        "name": "Coffee Mug",
+        "id": 21
+    },
+	{
+        "name": "Chai Latte",
+        "id": 22
+    },
+	{
+        "name": "Cold Brew",
+        "id": 23
+    },
+	{
+		"iconId": 77,
+		"id": 108
+	},
+	{
+        "name": "Sugar Strike",
+        "id": 100
+    },
+	{
+        "name": "Seven Shot Espresso",
+        "id": 24
+    },
+	{
+        "name": "Zombie Horde",
+        "id": 73
+    },
+	{
+        "name": "All-Seeing Eye",
+        "id": 74
+    },
+	{
+        "name": "Tribal Council",
+        "id": 87
+    },
+	{
+		"name": "Tourist Camouflage",
+		"description": "Thankfully, her travel accessories help her blend into the crowd",
+		"id": 13
+	},
+	{
+		"name": "Jeweled Dagger",
+    	"description": "Brittany has carefully honed this blade to a razor’s edge.",
+    	"id": 14
+    },
+	{
+		"name": "Elixir of Intoxication",
+		"id": 15
+	},
+	{
+		"iconId": 52,
+		"id": 109
+	},
+	{
+		"name": "Rise of the fallen",
+		"description": "Abbadon can raise the fallen to fight by your side.",
+    	"id": 73
+	},
+	{
+		"description": "Sharp points on Treebeast’s weapon that delivers powerful slashes",
+    	"id": 18
+	},
+	{
+		"description": "He's pretty strong, but fearful of things. This tonic will help him overcome his fears.",
+    	"id": 33
+	},
+	{
+		"description": "Another upgrade to her sword, giving her a much faster swing. \"Nobody will be safe from me.\"",
+    	"id": 51
+	},
+	{
+		"description": "My sword, she’s already historic. If she receives a blessing, I’ll have to give her a name…",
+		"id": 52
+	},
+	{
+		"description":"\"I can open rifts to the Planes of Gold,\" he says, with madness in his eyes. The rift can only open after destroying a monster, and heavy golden furniture falls through.",
+		"id": 68
+	},
+	{
+		"iconId": 51,
+		"id": 70
+	},
+	{
+		"name": "All-Powerful Hand",
+		"description": "The eastern rites bless Ma Zhu with a portion of their holy might increasing Ma Zhu's damage. ",
+		"id": 77
+	},
+	{
+		"description": "\"I fear you may not be balancing the powers from the rites,\" Ma Zhu tells you, hinting at this upgrade. \"Abaddon is a dangerous one.\"",
+		"id": 79
+	},
+	{
+		"description": "\"I am here to help you, mortal. Grant me this power and you will be rewarded with the loot of the fallen.\"",
+		"iconId": 52,
+		"id": 81
+	},
+	{
+		"description": "\"Destroying monsters, one of my favorite pastimes.\"",
+		"iconId": 52,
+		"id": 88		
+	},
+	{
+		"name": "Scream",
+		"description": "Athena takes in a deep breath and lets out a fearsome scream that reverberates miles across land and sea. Monsters tremble in its wake. ",
+		"id": 89
+	},
+	{
+		"name": "Hunger",
+		"description": "Taste for destruction thickens as enemies fall to Athena's feet. Her hunger drives her DPS through the roof.",
+		"id": 90
+	},
+	{
+		"name": "Boiling Rage",
+		"description": "Angering Athena will totally ruin someone's day. ",
+		"iconId": 51,
+		"id": 91
+	},
+	{
+		"description": "One little taste and enemies practically defeat each other for Aphrodite's affection.",
+		"id": 93
+	},
+	{
+		"name": "Kiss of Power",
+		"id": 95
+	},
+	{
+		"description": "\"One speech is all it takes to release their anger.\"",
+		"id": 141
+	},
+	{
+		"description": "Brings the fallen back.",
+		"id": 146		
+	},
+	{
+		"description": "Great for planting seeds.",
+		"id": 151
+	},
+	{
+		"name": "Divine Beauty",
+		"description": "Once you see her, you won't be able to look away.",
+		"id": 159
+	},
+	{
+		"description": "\"I'll destroy you before you're even born!\" she yells.",
+		"id": 174
+	},
+	{
+		"description": "Boundlessly leaping\nWho would have thought that such grace\nWould be dangerous",
+		"id": 219
+	},
+	{
+		"description": "\"All that lives must join nature's endless cycle, creating space for new beginnings.\"",
+		"id": 241
+	},
+	{
+		"description": "Sanguine is the wind beneath both wings and dreams.",
+		"id": 254
+	},
+	{
+		"iconId": 197,
+		"id": 133
+	},
+	{
+		"description": "Swords dance in the wind, damaging and striking enemies down to the floor.",
+		"id": 96
+	}
+]
