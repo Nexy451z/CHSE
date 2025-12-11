@@ -1,5 +1,5 @@
-Gemini用データ/
 process_data.py
 __pycache__/
 *.log
 .DS_Store
+
