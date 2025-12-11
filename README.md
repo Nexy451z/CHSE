@@ -33,5 +33,8 @@
 - **Styling**: Vanilla CSS (CSS Variables)
 - **Compression**: pako.js
 
+## Credits
+- Game assets and text are representative of "Clicker Heroes" and belong to Playsaurus.
+
 
 
