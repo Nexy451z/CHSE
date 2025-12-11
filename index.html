@@ -398,6 +398,18 @@
             </div>
         </div>
     </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container">
+        <transition-group name="toast">
+            <div v-for="toast in toasts" :key="toast.id" class="toast-notification" :class="toast.type">
+                {{ toast.message }}
+                <button class="toast-close" @click="removeToast(toast.id)">×</button>
+            </div>
+        </transition-group>
+    </div>
+    </div>
     <script src="js/app.js"></script>
 </body>
 

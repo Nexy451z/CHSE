@@ -52,6 +52,20 @@ createApp({
         const saveData = ref(null);
         const inputSaveData = ref('');
 
+        const toasts = ref([]);
+
+        const showToast = (message, type = 'info') => {
+            const id = Date.now() + Math.random();
+            toasts.value.push({ id, message, type });
+            setTimeout(() => {
+                removeToast(id);
+            }, 3000);
+        };
+
+        const removeToast = (id) => {
+            toasts.value = toasts.value.filter(t => t.id !== id);
+        };
+
         // STATIC_DATAが読み込まれていない場合のフォールバック
         const staticItemBonuses = (typeof STATIC_DATA !== 'undefined' && STATIC_DATA.itemBonuses) ? STATIC_DATA.itemBonuses : {};
 
@@ -115,12 +129,13 @@ createApp({
                 if (json) {
                     saveData.value = json;
                     currentTab.value = 'general';
+                    showToast('セーブデータを読み込みました', 'success');
                 } else {
-                    alert('形式不明のデータです。');
+                    showToast('形式不明のデータです', 'error');
                 }
             } catch (e) {
                 console.error(e);
-                alert('読込エラー: ' + e.message);
+                showToast('読込エラー: ' + e.message, 'error');
             }
         };
 
@@ -129,7 +144,7 @@ createApp({
             newSave.creationTimestamp = Date.now();
             newSave.uniqueId = "chse_" + Date.now();
             saveData.value = newSave;
-            alert("新規データを作成しました。\n編集後に保存してください。");
+            showToast("新規データを作成しました。編集後に保存してください。", 'success');
         };
 
         const unsprinkle = (data) => {
@@ -150,7 +165,7 @@ createApp({
                 return HEADER + btoa(binaryString);
             } catch (e) {
                 console.error(e);
-                alert("保存エラー: " + e.message);
+                showToast("保存エラー: " + e.message, 'error');
                 return null;
             }
         };
@@ -178,6 +193,7 @@ createApp({
                 a.download = 'clicker_heroes_save.txt';
                 a.click();
                 URL.revokeObjectURL(url);
+                showToast('セーブファイルをダウンロードしました', 'success');
             }
         };
 
@@ -245,20 +261,20 @@ createApp({
 
         const removeCheatFlag = () => {
             saveData.value.isCheater = false;
-            alert('チーターフラグを解除しました');
+            showToast('チーターフラグを解除しました', 'success');
         };
 
         const unlockAllSkins = () => {
             if (!saveData.value.autoclickerSkins) saveData.value.autoclickerSkins = {};
             for (let i = 1; i <= 20; i++) saveData.value.autoclickerSkins[i] = true;
-            alert('全スキンを解放しました');
+            showToast('全スキンを解放しました', 'success');
         };
 
         const gildAll = (targetId) => {
             for (const id in saveData.value.heroCollection.heroes) {
                 saveData.value.heroCollection.heroes[id].epicLevel = 0;
             }
-            alert('全ギルドをリセットしました');
+            showToast('全ギルドをリセットしました', 'info');
         };
 
         const maxLevels = () => {
@@ -266,7 +282,7 @@ createApp({
                 saveData.value.heroCollection.heroes[id].level = 10000;
                 saveData.value.heroCollection.heroes[id].locked = false;
             }
-            alert('全ヒーローをLv10000にし、ロック解除しました');
+            showToast('全ヒーローをLv10000にし、ロック解除しました', 'success');
         };
 
         const toggleUpgrade = (hero, upgradeId) => {
@@ -287,7 +303,7 @@ createApp({
                     saveData.value.upgrades[u.id] = true;
                 });
             }
-            alert('アップグレードを全て購入済みにしました');
+            showToast('アップグレードを全て購入済みにしました', 'success');
         };
 
         const hasUpgrade = (upgradeId) => {
@@ -296,12 +312,12 @@ createApp({
 
         const reviveMerc = (merc) => {
             merc.timeToDie = 86400000;
-            alert(`${merc.name || '傭兵'} を復活させました`);
+            showToast(`${merc.name || '傭兵'} を復活させました`, 'success');
         };
 
         const makeImmortal = (merc) => {
             merc.timeToDie = 2147483647;
-            alert(`${merc.name || '傭兵'} を不死化しました`);
+            showToast(`${merc.name || '傭兵'} を不死化しました`, 'success');
         };
 
         return {
@@ -329,6 +345,8 @@ createApp({
             getStaticName,
             imgError,
             staticItemBonuses,
+            toasts,
+            removeToast,
             buyAllUpgradesGlobal: () => {
                 if (!saveData.value.upgrades) saveData.value.upgrades = {};
                 for (const heroId in STATIC_DATA.heroes) {
@@ -339,7 +357,7 @@ createApp({
                         });
                     }
                 }
-                alert('全ヒーローのアップグレードを解放しました');
+                showToast('全ヒーローのアップグレードを解放しました', 'success');
             }
         };
     }
